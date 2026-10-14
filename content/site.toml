@@ -1,0 +1,13 @@
+# Shared settings for both languages.
+# After you buy a domain, change base_url (and taskflow_demo), run `python3 build.py`, commit.
+
+base_url = "https://portfolio.89-168-71-45.sslip.io"
+
+name = "Kerem Çimentepe"
+email = "cimentepekerem@gmail.com"
+github = "https://github.com/Keremcimentepe"
+linkedin = "https://www.linkedin.com/in/kerem-cimentepe"
+cv_file = "Kerem-Cimentepe-CV.pdf"
+
+taskflow_demo = "https://89-168-71-45.sslip.io"
+taskflow_code = "https://github.com/Keremcimentepe/GorevTakip"
