@@ -1,10 +1,11 @@
-# Portfolio site block for the Caddy instance that already serves TaskFlow.
-# Add it BELOW the existing TaskFlow block; do not change that block.
-# The container sees this repository at /srv/portfolio (read-only bind mount).
-# Temporary host until a domain is bought; Caddy gets the certificate by itself.
+# Portfolio site block, served by the Caddy container of TaskFlow (GorevTakip).
+# On the server this repository lives in ~/caddy-sites/portfolio, and
+# ~/caddy-sites/portfolio.caddy is a symlink to this file. TaskFlow's Caddyfile
+# imports /srv/sites/*.caddy, and the container sees ~/caddy-sites at /srv/sites.
+# After changing this file: bash deploy/update.sh on the server (validates, then reloads).
 
 portfolio.89-168-71-45.sslip.io {
-	root * /srv/portfolio/public
+	root * /srv/sites/portfolio/public
 	encode zstd gzip
 
 	header {
@@ -22,6 +23,7 @@ portfolio.89-168-71-45.sslip.io {
 	@pages not path /assets/*
 	header @pages Cache-Control "no-cache"
 
+	# Only the built site is public; sources and .git are outside the root.
 	file_server
 
 	handle_errors {
