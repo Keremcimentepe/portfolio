@@ -11,7 +11,7 @@ src/           site.css, site.js, theme.js
 static/        CV (PDF), icons, Open Graph images, fonts (Inter, OFL)
 build.py       turns content + src + static into public/
 public/        generated site that the server serves (committed)
-deploy/        Caddy site block used on the server
+deploy/        Caddy site block and the server update script
 ```
 
 ## Change something
@@ -23,17 +23,30 @@ deploy/        Caddy site block used on the server
 
 To replace the CV, overwrite `static/Kerem-Cimentepe-CV.pdf` and rebuild.
 
+## How it is served
+
+TaskFlow's Caddy (in the GorevTakip stack) is the only web server on the machine. Its Caddyfile
+imports every `/srv/sites/*.caddy`, and the container sees the server folder `~/caddy-sites`
+at `/srv/sites` (read-only):
+
+```
+~/caddy-sites/
+  portfolio/          this repository (Caddy serves only portfolio/public)
+  portfolio.caddy  -> portfolio/deploy/portfolio.caddy   (symlink)
+```
+
 ## Update the live site
 
 On the server, one command:
 
 ```bash
-git -C ~/portfolio pull --ff-only
+bash ~/caddy-sites/portfolio/deploy/update.sh
 ```
 
-Caddy serves `~/portfolio/public` directly, so no restart is needed.
+It pulls the latest commit. Page changes are live at once; if `deploy/portfolio.caddy`
+changed, it validates the Caddy config first and then reloads it without downtime.
 
 ## Moving to a domain
 
-Change `base_url` (and `taskflow_demo`) in `content/site.toml`, rebuild, commit, pull on the
-server, and change the host name in the Caddy site block.
+Change `base_url` (and `taskflow_demo`) in `content/site.toml`, rebuild, change the host name
+in `deploy/portfolio.caddy`, commit, push, and run the update command on the server.
