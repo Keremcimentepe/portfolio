@@ -1,0 +1,153 @@
+# English page → public/index.html
+# Only facts from the CV. Do not add anything that is not verified.
+
+[meta]
+lang = "en"
+locale = "en_US"
+path = "/"
+title = "Kerem Çimentepe · C# / ASP.NET Core & React"
+description = "Computer Engineering student at Gazi University focused on backend development with C# and ASP.NET Core. Projects, skills, CV and contact."
+og_image = "og-en.png"
+og_image_alt = "Kerem Çimentepe, Computer Engineering student, backend development with C# and ASP.NET Core"
+
+[ui]
+skip = "Skip to content"
+nav_label = "Sections"
+lang_switch = "Türkçe"
+theme_to_dark = "Switch to dark theme"
+theme_to_light = "Switch to light theme"
+cv = "Download CV"
+cv_note = "PDF, 1 page"
+email_cta = "Email me"
+copy = "Copy address"
+copied = "Copied"
+more_github = "More on GitHub"
+footer_privacy = "No cookies, tracking or analytics on this site."
+
+[[ui.nav]]
+id = "about"
+label = "About"
+[[ui.nav]]
+id = "projects"
+label = "Projects"
+[[ui.nav]]
+id = "skills"
+label = "Skills"
+[[ui.nav]]
+id = "contact"
+label = "Contact"
+
+[hero]
+lead = "Computer Engineering student at Gazi University, focused on backend development with C# and ASP.NET Core."
+
+[[hero.facts]]
+term = "Looking for"
+value = "A long-term .NET / full-stack software engineering internship"
+[[hero.facts]]
+term = "Studying"
+value = "B.S. Computer Engineering, 4th year, GPA 3.24 / 4.00"
+[[hero.facts]]
+term = "Based in"
+value = "Ankara, Türkiye"
+
+[about]
+heading = "About"
+body = [
+  "I build applications end to end: a REST API, a PostgreSQL database and a React interface. I add authentication, automated tests and Docker packaging, and deploy them to a live server.",
+]
+education_heading = "Education"
+degree = "B.S. in Computer Engineering, Gazi University"
+dates = "09/2023 – present"
+gpa = "GPA 3.24 / 4.00"
+coursework = "Relevant coursework: Data Structures & Algorithms, Database Management Systems, Object-Oriented Programming"
+languages_heading = "Languages"
+[[about.languages]]
+name = "English"
+level = "Professional working proficiency (YDS 81.25)"
+[[about.languages]]
+name = "Turkish"
+level = "Native"
+
+[projects]
+heading = "Projects"
+
+[projects.featured]
+name = "TaskFlow"
+kind = "Task board (mini Trello)"
+summary = "A task board where each user manages their own projects and tasks on a drag-and-drop board. I built the API, the interface and the tests, and I run it on my own server."
+stack = "C#, ASP.NET Core, Entity Framework Core, PostgreSQL, React, TypeScript, Docker"
+demo_label = "Live demo"
+code_label = "Source code"
+code_note = "The repository is called GorevTakip, the project's earlier name."
+route_caption = "How a request reaches TaskFlow: the browser connects to Caddy over HTTPS. Caddy sends /api/* requests to the ASP.NET Core API, which stores data in PostgreSQL, and every other request to the React web app."
+route_browser = "Browser"
+route_api = "ASP.NET Core API"
+route_db = "PostgreSQL"
+route_web = "React web app"
+
+[[projects.featured.details]]
+term = "API"
+text = "ASP.NET Core Minimal API with EF Core on PostgreSQL: projects and tasks, a service layer, FluentValidation request validation, global error handling that returns ProblemDetails, and rate limiting on login."
+[[projects.featured.details]]
+term = "Security"
+text = "JWT authentication with PBKDF2 password hashing. Data is isolated per user: requests for another user's records return 404."
+[[projects.featured.details]]
+term = "Interface"
+text = "React 19 + TypeScript board with three columns and drag and drop. Updates are optimistic and roll back if the server rejects them."
+[[projects.featured.details]]
+term = "Tests"
+text = "xUnit integration tests with WebApplicationFactory, Vitest + React Testing Library component tests, and Playwright end-to-end tests."
+[[projects.featured.details]]
+term = "Delivery"
+text = "GitHub Actions CI. Packaged with Docker Compose and deployed to an Oracle Cloud Ubuntu (ARM) server behind Caddy with automatic HTTPS."
+
+[[projects.others]]
+name = "RentGo"
+kind = "Car rental platform"
+stack = "ASP.NET Core MVC, C#, PostgreSQL, Razor"
+points = [
+  "Role-based administrative permissions and access control.",
+  "Repository layers and DTOs keep data access separate from business logic.",
+  "Server-rendered interface built with Razor.",
+]
+
+[[projects.others]]
+name = "Inventory & Production Management System"
+kind = "Warehouse, production and employee records"
+stack = "Java, Spring Boot, PostgreSQL"
+points = [
+  "Combines warehouse inventory tracking, production workflows and employee records in one application.",
+  "RESTful services in Spring Boot on top of a normalized PostgreSQL schema.",
+]
+
+[[projects.others]]
+name = "Other projects"
+kind = "Algorithms and AI experiments"
+stack = "Python"
+points = [
+  "Warehouse route optimization: benchmarked A*, K-Nearest Neighbors and Simulated Annealing for pick-route planning.",
+  "AI audio pipeline: chained voice cloning, sentiment analysis and accent conversion models into one workflow.",
+]
+
+[skills]
+heading = "Skills"
+
+[[skills.groups]]
+name = "Programming languages"
+items = "C#, SQL, TypeScript, Java, Python, C/C++"
+[[skills.groups]]
+name = ".NET backend"
+items = "ASP.NET Core (Minimal API, MVC), Entity Framework Core, FluentValidation, JWT, REST API design, Swagger/OpenAPI"
+[[skills.groups]]
+name = "Other frameworks"
+items = "React, Spring Boot"
+[[skills.groups]]
+name = "Testing"
+items = "xUnit, Vitest, React Testing Library, Playwright"
+[[skills.groups]]
+name = "DevOps and databases"
+items = "Docker, Docker Compose, GitHub Actions, PostgreSQL, Linux, Caddy, Git"
+
+[contact]
+heading = "Contact"
+body = "Write to me by email, or find me on LinkedIn and GitHub."

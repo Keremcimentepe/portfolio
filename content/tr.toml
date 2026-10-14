@@ -1,0 +1,153 @@
+# Türkçe sayfa → public/tr/index.html
+# Yalnızca CV'deki bilgiler. Doğrulanmamış hiçbir şey ekleme.
+
+[meta]
+lang = "tr"
+locale = "tr_TR"
+path = "/tr/"
+title = "Kerem Çimentepe · C# / ASP.NET Core ve React"
+description = "C# ve ASP.NET Core ile backend geliştirmeye odaklanan Gazi Üniversitesi Bilgisayar Mühendisliği öğrencisi. Projeler, yetenekler, CV ve iletişim."
+og_image = "og-tr.png"
+og_image_alt = "Kerem Çimentepe, Bilgisayar Mühendisliği öğrencisi, C# ve ASP.NET Core ile backend geliştirme"
+
+[ui]
+skip = "İçeriğe geç"
+nav_label = "Bölümler"
+lang_switch = "English"
+theme_to_dark = "Koyu temaya geç"
+theme_to_light = "Açık temaya geç"
+cv = "CV'yi indir"
+cv_note = "PDF, İngilizce, 1 sayfa"
+email_cta = "E-posta gönder"
+copy = "Adresi kopyala"
+copied = "Kopyalandı"
+more_github = "GitHub'daki diğer çalışmalarım"
+footer_privacy = "Bu sitede çerez, izleme veya analitik yok."
+
+[[ui.nav]]
+id = "about"
+label = "Hakkımda"
+[[ui.nav]]
+id = "projects"
+label = "Projeler"
+[[ui.nav]]
+id = "skills"
+label = "Yetenekler"
+[[ui.nav]]
+id = "contact"
+label = "İletişim"
+
+[hero]
+lead = "Gazi Üniversitesi Bilgisayar Mühendisliği öğrencisiyim; C# ve ASP.NET Core ile backend geliştirmeye odaklanıyorum."
+
+[[hero.facts]]
+term = "Aradığım"
+value = "Uzun dönem .NET / full-stack yazılım mühendisliği stajı"
+[[hero.facts]]
+term = "Eğitim"
+value = "Bilgisayar Mühendisliği lisans, 4. sınıf, not ortalaması 3,24 / 4,00"
+[[hero.facts]]
+term = "Konum"
+value = "Ankara, Türkiye"
+
+[about]
+heading = "Hakkımda"
+body = [
+  "Uygulamaları uçtan uca geliştiriyorum: REST API, PostgreSQL veritabanı ve React arayüzü. Kimlik doğrulama, otomatik testler ve Docker paketlemesi ekliyor, ardından canlı bir sunucuya yayınlıyorum.",
+]
+education_heading = "Eğitim"
+degree = "Bilgisayar Mühendisliği Lisans, Gazi Üniversitesi"
+dates = "09/2023 – devam ediyor"
+gpa = "Not ortalaması 3,24 / 4,00"
+coursework = "İlgili dersler: Veri Yapıları ve Algoritmalar, Veritabanı Yönetim Sistemleri, Nesne Yönelimli Programlama"
+languages_heading = "Diller"
+[[about.languages]]
+name = "İngilizce"
+level = "Profesyonel çalışma yeterliliği (YDS 81,25)"
+[[about.languages]]
+name = "Türkçe"
+level = "Anadil"
+
+[projects]
+heading = "Projeler"
+
+[projects.featured]
+name = "TaskFlow"
+kind = "Görev panosu (mini Trello)"
+summary = "Her kullanıcının kendi projelerini ve görevlerini sürükle-bırak bir panoda yönettiği bir uygulama. API'yi, arayüzü ve testleri ben yazdım; uygulamayı kendi sunucumda çalıştırıyorum."
+stack = "C#, ASP.NET Core, Entity Framework Core, PostgreSQL, React, TypeScript, Docker"
+demo_label = "Canlı demo"
+code_label = "Kaynak kod"
+code_note = "Deponun adı GorevTakip; projenin eski adı."
+route_caption = "Bir isteğin TaskFlow'a ulaşma yolu: tarayıcı Caddy'ye HTTPS ile bağlanır. Caddy, /api/* isteklerini verileri PostgreSQL'de tutan ASP.NET Core API'ye, diğer tüm istekleri React web uygulamasına yönlendirir."
+route_browser = "Tarayıcı"
+route_api = "ASP.NET Core API"
+route_db = "PostgreSQL"
+route_web = "React web uygulaması"
+
+[[projects.featured.details]]
+term = "API"
+text = "EF Core ve PostgreSQL üzerinde ASP.NET Core Minimal API: projeler ve görevler, servis katmanı, FluentValidation ile istek doğrulama, ProblemDetails döndüren merkezi hata yönetimi ve girişte hız sınırlama (rate limiting)."
+[[projects.featured.details]]
+term = "Güvenlik"
+text = "JWT kimlik doğrulama ve PBKDF2 ile parola özetleme. Veriler kullanıcıya özeldir: başka bir kullanıcının kayıtları istendiğinde 404 döner."
+[[projects.featured.details]]
+term = "Arayüz"
+text = "React 19 + TypeScript ile üç sütunlu, sürükle-bırak pano. Güncellemeler iyimser (optimistic) uygulanır; sunucu reddederse geri alınır."
+[[projects.featured.details]]
+term = "Testler"
+text = "WebApplicationFactory ile xUnit entegrasyon testleri, Vitest + React Testing Library bileşen testleri ve Playwright uçtan uca testleri."
+[[projects.featured.details]]
+term = "Yayın"
+text = "GitHub Actions ile CI. Docker Compose ile paketlendi; Oracle Cloud'daki Ubuntu (ARM) sunucuda, otomatik HTTPS sağlayan Caddy'nin arkasında çalışıyor."
+
+[[projects.others]]
+name = "RentGo"
+kind = "Araç kiralama platformu"
+stack = "ASP.NET Core MVC, C#, PostgreSQL, Razor"
+points = [
+  "Rol tabanlı yönetici yetkileri ve erişim denetimi.",
+  "Repository katmanı ve DTO'larla veri erişimi iş mantığından ayrı tutuldu.",
+  "Arayüz, Razor ile sunucu tarafında oluşturuluyor.",
+]
+
+[[projects.others]]
+name = "Inventory & Production Management System"
+kind = "Stok, üretim ve çalışan kayıtları"
+stack = "Java, Spring Boot, PostgreSQL"
+points = [
+  "Depo stok takibini, üretim süreçlerini ve çalışan kayıtlarını tek uygulamada birleştiriyor.",
+  "Normalize edilmiş bir PostgreSQL şeması üzerinde Spring Boot ile RESTful servisler.",
+]
+
+[[projects.others]]
+name = "Diğer projeler"
+kind = "Algoritma ve yapay zekâ çalışmaları"
+stack = "Python"
+points = [
+  "Depo rota optimizasyonu: toplama rotası planlaması için A*, K-En Yakın Komşu (KNN) ve Benzetimli Tavlama (Simulated Annealing) yöntemlerini karşılaştırdım.",
+  "Yapay zekâ ses hattı: ses klonlama, duygu analizi ve aksan dönüşümü modellerini tek bir iş akışında birleştirdim.",
+]
+
+[skills]
+heading = "Yetenekler"
+
+[[skills.groups]]
+name = "Programlama dilleri"
+items = "C#, SQL, TypeScript, Java, Python, C/C++"
+[[skills.groups]]
+name = ".NET backend"
+items = "ASP.NET Core (Minimal API, MVC), Entity Framework Core, FluentValidation, JWT, REST API tasarımı, Swagger/OpenAPI"
+[[skills.groups]]
+name = "Diğer framework'ler"
+items = "React, Spring Boot"
+[[skills.groups]]
+name = "Test"
+items = "xUnit, Vitest, React Testing Library, Playwright"
+[[skills.groups]]
+name = "DevOps ve veritabanı"
+items = "Docker, Docker Compose, GitHub Actions, PostgreSQL, Linux, Caddy, Git"
+
+[contact]
+heading = "İletişim"
+body = "Bana e-postayla yazabilir ya da LinkedIn ve GitHub üzerinden ulaşabilirsiniz."

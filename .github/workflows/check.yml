@@ -1,0 +1,17 @@
+name: Check build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  public-is-up-to-date:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Build
+        run: python3 build.py
+      - name: public/ matches the sources
+        run: |
+          git status --porcelain public
+          test -z "$(git status --porcelain public)"
