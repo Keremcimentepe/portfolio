@@ -4,7 +4,7 @@
 # imports /srv/sites/*.caddy, and the container sees ~/caddy-sites at /srv/sites.
 # After changing this file: bash deploy/update.sh on the server (validates, then reloads).
 
-portfolio.89-168-71-45.sslip.io {
+keremcimentepe.com {
 	root * /srv/sites/portfolio/public
 	encode zstd gzip
 
@@ -33,4 +33,9 @@ portfolio.89-168-71-45.sslip.io {
 			file_server
 		}
 	}
+}
+
+# One address for links and search engines: www goes to the bare domain.
+www.keremcimentepe.com {
+	redir https://keremcimentepe.com{uri} permanent
 }
