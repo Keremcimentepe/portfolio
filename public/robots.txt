@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio.89-168-71-45.sslip.io/sitemap.xml
+Sitemap: https://keremcimentepe.com/sitemap.xml

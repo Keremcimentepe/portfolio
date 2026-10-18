@@ -46,7 +46,11 @@ bash ~/caddy-sites/portfolio/deploy/update.sh
 It pulls the latest commit. Page changes are live at once; if `deploy/portfolio.caddy`
 changed, it validates the Caddy config first and then reloads it without downtime.
 
-## Moving to a domain
+## Addresses
 
-Change `base_url` (and `taskflow_demo`) in `content/site.toml`, rebuild, change the host name
-in `deploy/portfolio.caddy`, commit, push, and run the update command on the server.
+- Portfolio: https://keremcimentepe.com (www redirects here)
+- TaskFlow: https://taskflow.keremcimentepe.com (served by the GorevTakip stack)
+
+DNS: A records for `@`, `www` and `taskflow` point to the server's reserved IP (Cloudflare,
+"DNS only"). To change the domain, update `content/site.toml` and the host names in
+`deploy/portfolio.caddy`, rebuild, commit, push, and run the update command on the server.
