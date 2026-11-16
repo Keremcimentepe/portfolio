@@ -38,7 +38,10 @@ at `/srv/sites` (read-only):
 
 ## Update the live site
 
-On the server, one command:
+Pushing to `main` deploys automatically: after the build check passes, GitHub Actions runs
+`deploy/update.sh` on the server over SSH (see the `deploy` job in `.github/workflows/check.yml`).
+
+Manual fallback, on the server:
 
 ```bash
 bash ~/caddy-sites/portfolio/deploy/update.sh
