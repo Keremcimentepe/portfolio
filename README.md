@@ -1,7 +1,8 @@
 # Portfolio — Kerem Çimentepe
 
 Personal portfolio site in English (`/`) and Turkish (`/tr/`). Static HTML, CSS and a little
-JavaScript; no framework, no cookies, no tracking or analytics.
+JavaScript; no framework, no cookies. Anonymous visit counts come from a self-hosted Umami
+(https://stats.keremcimentepe.com), configured in `content/site.toml`.
 
 ## Layout
 

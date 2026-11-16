@@ -12,6 +12,7 @@ import shutil
 import tomllib
 from html import escape
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content"
@@ -106,6 +107,13 @@ def head(site: dict, c: dict, assets: dict, *, noindex: bool = False) -> str:
         f'<script src="{assets["theme"]}"></script>',
         f'<script src="{assets["js"]}" defer></script>',
     ]
+    if site.get("analytics_website_id"):
+        # Counts visits only on the live domain, not on local previews.
+        domain = urlparse(site["base_url"]).hostname
+        lines.append(
+            f'<script src="{e(site["analytics_script"])}" data-website-id="{e(site["analytics_website_id"])}"'
+            f' data-domains="{e(domain)}" defer></script>'
+        )
     if not noindex:
         ld = json.dumps(person, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
         lines.append(f'<script type="application/ld+json">{ld}</script>')

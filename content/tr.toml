@@ -22,7 +22,7 @@ email_cta = "E-posta gönder"
 copy = "Adresi kopyala"
 copied = "Kopyalandı"
 more_github = "GitHub'daki diğer çalışmalarım"
-footer_privacy = "Bu sitede çerez, izleme veya analitik yok."
+footer_privacy = "Çerez yok. Ziyaret sayıları kendi sunucumdaki Umami ile anonim tutulur."
 
 [[ui.nav]]
 id = "about"

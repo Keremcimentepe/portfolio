@@ -11,3 +11,8 @@ cv_file = "Kerem-Cimentepe-CV.pdf"
 
 taskflow_demo = "https://taskflow.keremcimentepe.com"
 taskflow_code = "https://github.com/Keremcimentepe/GorevTakip"
+
+# Self-hosted Umami (no cookies). Leave website_id empty to build without analytics.
+# The host must also be allowed in the CSP in deploy/portfolio.caddy (script-src, connect-src).
+analytics_script = "https://stats.keremcimentepe.com/script.js"
+analytics_website_id = "09e35655-08af-4bef-9bf1-8d2c1c2240da"

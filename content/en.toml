@@ -22,7 +22,7 @@ email_cta = "Email me"
 copy = "Copy address"
 copied = "Copied"
 more_github = "More on GitHub"
-footer_privacy = "No cookies, tracking or analytics on this site."
+footer_privacy = "No cookies. Anonymous visit counts with self-hosted Umami."
 
 [[ui.nav]]
 id = "about"
